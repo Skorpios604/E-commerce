@@ -1,0 +1,54 @@
+import { products } from "@/data/products";
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import { ArrowLeft } from "lucide-react";
+import styles from "./page.module.css";
+
+// Generate static params for export
+export async function generateStaticParams() {
+    return products.map((product) => ({
+        id: product.id.toString(),
+    }));
+}
+
+export default function ProductPage({ params }: { params: { id: string } }) {
+    const product = products.find((p) => p.id.toString() === params.id);
+
+    if (!product) {
+        notFound();
+    }
+
+    return (
+        <main className={styles.main}>
+            <div className={styles.container}>
+                <Link href="/" className={styles.backLink}>
+                    <ArrowLeft size={16} />
+                    Back to Collection
+                </Link>
+
+                <div className={styles.content}>
+                    <div className={styles.imageContainer}>
+                        <div className={styles.imageGlow} />
+                        {/* Placeholder for actual image */}
+                        <div className="text-gray-600 font-mono text-sm">
+                            [PRODUCT IMAGE: {product.name}]
+                        </div>
+                    </div>
+
+                    <div className={styles.details}>
+                        <span className={styles.category}>{product.category}</span>
+                        <h1 className={styles.title}>{product.name}</h1>
+                        <p className={styles.price}>{product.price}</p>
+                        <p className={styles.description}>{product.description}</p>
+
+                        <div className={styles.actions}>
+                            <button className={styles.addToCart}>
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    );
+}

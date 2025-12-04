@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
-  basePath: '/E-commerce', // Repository name
+  basePath: process.env.GITHUB_ACTIONS ? '/E-commerce' : '',
 };
 
 export default nextConfig;
