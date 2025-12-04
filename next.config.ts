@@ -6,7 +6,6 @@ const nextConfig: NextConfig = {
     unoptimized: true,
   },
   basePath: '/E-commerce', // Repository name
-  assetPrefix: '/E-commerce/', // Repository name
 };
 
 export default nextConfig;
