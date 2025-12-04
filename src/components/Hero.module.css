@@ -1,0 +1,116 @@
+.hero {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: black;
+}
+
+.background {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.blob1 {
+    position: absolute;
+    top: -20%;
+    left: -10%;
+    width: 50vw;
+    height: 50vw;
+    border-radius: 50%;
+    background-color: var(--accent);
+    opacity: 0.1;
+    filter: blur(120px);
+}
+
+.blob2 {
+    position: absolute;
+    bottom: -20%;
+    right: -10%;
+    width: 40vw;
+    height: 40vw;
+    border-radius: 50%;
+    background-color: #581c87;
+    /* purple-900 */
+    opacity: 0.2;
+    filter: blur(100px);
+}
+
+.noise {
+    position: absolute;
+    inset: 0;
+    background-image: url('/noise.svg');
+    opacity: 0.2;
+    mix-blend-mode: overlay;
+}
+
+.content {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 2rem;
+    max-width: 1400px;
+}
+
+.title {
+    font-size: 4rem;
+    font-weight: 700;
+    letter-spacing: -0.05em;
+    margin-bottom: 1.5rem;
+    mix-blend-mode: difference;
+    color: white;
+    line-height: 1.1;
+}
+
+@media (min-width: 768px) {
+    .title {
+        font-size: 8rem;
+    }
+}
+
+.gradientText {
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    background-image: linear-gradient(to right, var(--accent), white);
+}
+
+.subtitle {
+    font-size: 1.125rem;
+    color: #9ca3af;
+    /* gray-400 */
+    max-width: 42rem;
+    margin-bottom: 2.5rem;
+    font-weight: 300;
+}
+
+@media (min-width: 768px) {
+    .subtitle {
+        font-size: 1.25rem;
+    }
+}
+
+.button {
+    padding: 1rem 2rem;
+    background-color: var(--accent);
+    color: black;
+    font-weight: 700;
+    font-size: 1.125rem;
+    border-radius: 9999px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 0 20px var(--accent-glow);
+    transition: transform 0.3s ease;
+}
+
+.button:hover {
+    transform: scale(1.05);
+}

@@ -1,0 +1,155 @@
+.section {
+    padding: 6rem 0;
+    background-color: black;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 4rem;
+}
+
+.title {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: white;
+}
+
+@media (min-width: 768px) {
+    .title {
+        font-size: 3.75rem;
+    }
+}
+
+.accent {
+    color: var(--accent);
+}
+
+.counter {
+    color: #6b7280;
+    /* gray-500 */
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .counter {
+        display: block;
+    }
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+@media (min-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.card {
+    position: relative;
+    aspect-ratio: 3 / 4;
+    background-color: #111;
+    border: 1px solid #222;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.cardOverlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.8));
+    opacity: 0.6;
+    transition: opacity 0.3s;
+}
+
+.card:hover .cardOverlay {
+    opacity: 0.8;
+}
+
+.cardGlow {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.card:hover .cardGlow {
+    opacity: 1;
+}
+
+.glowBlob {
+    width: 8rem;
+    height: 8rem;
+    border-radius: 50%;
+    background-color: var(--accent);
+    filter: blur(50px);
+    opacity: 0.2;
+}
+
+.cardContent {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.5rem;
+}
+
+.category {
+    font-size: 0.75rem;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.productName {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 0.25rem;
+    transition: transform 0.3s;
+}
+
+.card:hover .productName {
+    transform: translateX(0.5rem);
+}
+
+.price {
+    color: #9ca3af;
+    /* gray-400 */
+}
+
+.corner {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 0.5rem;
+    height: 0.5rem;
+    background-color: var(--accent);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.card:hover .corner {
+    opacity: 1;
+}
