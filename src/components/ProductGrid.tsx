@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import styles from "./ProductGrid.module.css";
 import { products } from "@/data/products";
 
@@ -26,6 +27,15 @@ export default function ProductGrid() {
                                 transition={{ delay: index * 0.1 }}
                                 className={styles.card}
                             >
+                                <div className={styles.imageWrapper}>
+                                    <Image
+                                        src={product.image}
+                                        alt={product.name}
+                                        fill
+                                        className={styles.productImage}
+                                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                                    />
+                                </div>
                                 <div className={styles.cardOverlay} />
 
                                 <div className={styles.cardGlow}>
