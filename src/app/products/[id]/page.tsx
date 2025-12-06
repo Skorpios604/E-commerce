@@ -4,6 +4,8 @@ import { notFound } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
 import styles from "./page.module.css";
 
+import Image from "next/image";
+
 // Generate static params for export
 export async function generateStaticParams() {
     return products.map((product) => ({
@@ -30,10 +32,13 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
                 <div className={styles.content}>
                     <div className={styles.imageContainer}>
                         <div className={styles.imageGlow} />
-                        {/* Placeholder for actual image */}
-                        <div className="text-gray-600 font-mono text-sm">
-                            [PRODUCT IMAGE: {product.name}]
-                        </div>
+                        <Image
+                            src={product.image}
+                            alt={product.name}
+                            fill
+                            style={{ objectFit: "cover", zIndex: 1 }}
+                            priority
+                        />
                     </div>
 
                     <div className={styles.details}>
