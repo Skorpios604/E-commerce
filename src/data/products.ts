@@ -1,10 +1,16 @@
+import { StaticImageData } from "next/image";
+import cyberDeck from "@/assets/images/products/cyber-deck.png";
+import neonVisor from "@/assets/images/products/neon-visor.png";
+import neuralLink from "@/assets/images/products/neural-link.png";
+import holoProjector from "@/assets/images/products/holo-projector.png";
+
 export interface Product {
     id: number;
     name: string;
     price: string;
     category: string;
     description: string;
-    image: string;
+    image: StaticImageData | string;
 }
 
 export const products: Product[] = [
@@ -14,7 +20,7 @@ export const products: Product[] = [
         price: "$299",
         category: "Hardware",
         description: "A portable hacking terminal with a holographic display and mechanical keys. Essential for any netrunner.",
-        image: "/images/products/cyber-deck.png"
+        image: cyberDeck
     },
     {
         id: 2,
@@ -22,7 +28,7 @@ export const products: Product[] = [
         price: "$149",
         category: "Wearable",
         description: "Augmented reality visor with night vision and thermal overlay. Style meets tactical advantage.",
-        image: "/images/products/neon-visor.png"
+        image: neonVisor
     },
     {
         id: 3,
@@ -30,7 +36,7 @@ export const products: Product[] = [
         price: "$999",
         category: "Implant",
         description: "Direct brain-computer interface. Experience the net at the speed of thought. Installation required.",
-        image: "/images/products/neural-link.png"
+        image: neuralLink
     },
     {
         id: 4,
@@ -38,6 +44,6 @@ export const products: Product[] = [
         price: "$499",
         category: "Gadget",
         description: "Pocket-sized 3D hologram projector. Perfect for presentations or distractions.",
-        image: "/images/products/holo-projector.png"
+        image: holoProjector
     },
 ];

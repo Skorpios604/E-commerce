@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import styles from "./Hero.module.css";
+import noise from "@/assets/noise.svg";
 
 export default function Hero() {
     return (
@@ -10,7 +11,10 @@ export default function Hero() {
             <div className={styles.background}>
                 <div className={styles.blob1} />
                 <div className={styles.blob2} />
-                <div className={styles.noise} />
+                <div
+                    className={styles.noise}
+                    style={{ backgroundImage: `url(${noise.src})` }}
+                />
             </div>
 
             <div className={styles.content}>

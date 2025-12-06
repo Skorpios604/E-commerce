@@ -44,7 +44,7 @@
 .noise {
     position: absolute;
     inset: 0;
-    background-image: url('/noise.svg');
+
     opacity: 0.2;
     mix-blend-mode: overlay;
 }
