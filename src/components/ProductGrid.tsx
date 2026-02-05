@@ -19,7 +19,7 @@ export default function ProductGrid() {
 
                 <div className={styles.grid}>
                     {products.map((product, index) => (
-                        <Link key={product.id} href={`/products/${product.id}`} passHref legacyBehavior>
+                        <Link key={product.id} href={`/products/${product.id}`}>
                             <motion.div
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
