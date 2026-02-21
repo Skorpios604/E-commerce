@@ -1,12 +1,15 @@
+@import "tailwindcss";
+
 :root {
   --background: #050505;
   --foreground: #f0f0f0;
-  --accent: #D4FF00; /* Acid Green */
+  --accent: #D4FF00;
+  /* Acid Green */
   --accent-glow: rgba(212, 255, 0, 0.4);
   --surface: #111111;
   --surface-highlight: #1a1a1a;
   --border: #333333;
-  
+
   --font-syne: 'Syne', sans-serif;
   --font-manrope: 'Manrope', sans-serif;
 }
@@ -27,7 +30,12 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-syne);
   font-weight: 700;
 }
@@ -54,8 +62,15 @@ a {
 
 /* Animations */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .animate-fade-in {

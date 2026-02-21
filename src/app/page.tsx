@@ -1,12 +1,14 @@
 import Image from "next/image";
-import Hero from "@/components/Hero";
+import HeroText from "@/components/ui/hero-shutter-text";
 import ProductGrid from "@/components/ProductGrid";
 import styles from "./page.module.css";
 
 export default function Home() {
   return (
     <main className={styles.main}>
-      <Hero />
+      <div className="h-screen w-full">
+        <HeroText />
+      </div>
       <ProductGrid />
 
       <footer className={styles.footer}>
