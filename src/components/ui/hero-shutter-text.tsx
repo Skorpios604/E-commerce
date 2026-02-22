@@ -63,7 +63,7 @@ export default function HeroText({
                                             delay: i * 0.04,
                                             ease: "easeInOut",
                                         }}
-                                        className="absolute inset-0 text-[11vw] leading-none font-black text-emerald-400 z-10 pointer-events-none"
+                                        className="absolute inset-0 text-[11vw] leading-none font-black text-[#442467] z-10 pointer-events-none"
                                         style={{ clipPath: "polygon(0 0, 100% 0, 100% 35%, 0 35%)" }}
                                     >
                                         {char === " " ? "\u00A0" : char}
@@ -78,7 +78,7 @@ export default function HeroText({
                                             delay: i * 0.04 + 0.1,
                                             ease: "easeInOut",
                                         }}
-                                        className="absolute inset-0 text-[11vw] leading-none font-black text-zinc-200 z-10 pointer-events-none"
+                                        className="absolute inset-0 text-[11vw] leading-none font-black text-[#442467] z-10 pointer-events-none"
                                         style={{
                                             clipPath: "polygon(0 35%, 100% 35%, 100% 65%, 0 65%)",
                                         }}
@@ -95,7 +95,7 @@ export default function HeroText({
                                             delay: i * 0.04 + 0.2,
                                             ease: "easeInOut",
                                         }}
-                                        className="absolute inset-0 text-[11vw] leading-none font-black text-emerald-400 z-10 pointer-events-none"
+                                        className="absolute inset-0 text-[11vw] leading-none font-black text-[#442467] z-10 pointer-events-none"
                                         style={{
                                             clipPath: "polygon(0 65%, 100% 65%, 100% 100%, 0 100%)",
                                         }}
