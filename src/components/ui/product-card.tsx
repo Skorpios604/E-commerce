@@ -26,7 +26,6 @@ export default function ProductCard({ product }: ProductCardProps) {
             speed: Math.random() * 0.02 + 0.01
         }));
 
-        // Observe container for resize
         const resizeObserver = new ResizeObserver((entries) => {
             for (let entry of entries) {
                 if (entry.target === containerRef.current) {
@@ -38,7 +37,6 @@ export default function ProductCard({ product }: ProductCardProps) {
 
         if (containerRef.current) {
             resizeObserver.observe(containerRef.current);
-            // backup initial size
             canvas.width = containerRef.current.clientWidth;
             canvas.height = containerRef.current.clientHeight;
         }
@@ -53,7 +51,7 @@ export default function ProductCard({ product }: ProductCardProps) {
 
         function draw() {
             if (!canvas || !ctx) return;
-            // clear the canvas
+            // Clear the canvas each frame
             ctx.clearRect(0, 0, canvas.width, canvas.height);
 
             waveData.forEach((data, i) => {
@@ -67,14 +65,12 @@ export default function ProductCard({ product }: ProductCardProps) {
                     x === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
                 }
                 const intensity = Math.min(1, freq * 0.3);
-                // Acid green base color: D4FF00 = rgb(212, 255, 0)
-                const r = 212 + intensity * 43;
-                const g = 255;
-                const b = 0;
-
+                const r = 79 + intensity * 100;
+                const g = 70 + intensity * 130;
+                const b = 229;
                 ctx.lineWidth = 1 + i * 0.3;
-                ctx.strokeStyle = `rgba(${r}, ${g}, ${b}, 0.6)`;
-                ctx.shadowColor = `rgba(${r}, ${g}, ${b}, 0.5)`;
+                ctx.strokeStyle = `rgba(${r},${g},${b},0.6)`;
+                ctx.shadowColor = `rgba(${r},${g},${b},0.5)`;
                 ctx.shadowBlur = 5;
                 ctx.stroke();
                 ctx.shadowBlur = 0;
@@ -98,58 +94,59 @@ export default function ProductCard({ product }: ProductCardProps) {
     }, []);
 
     return (
-        <div ref={containerRef} className="relative w-full aspect-[3/4] flex items-center justify-center rounded-2xl overflow-hidden group">
-            {/* Animated Canvas Background */}
-            <canvas ref={canvasRef} className="absolute inset-0 w-full h-full opacity-30 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+        <div ref={containerRef} className="relative w-full aspect-[3/4] card-border overflow-hidden rounded-2xl flex flex-col animate-float bg-black/50 backdrop-blur-sm group">
+            {/* Animated Canvas Background (bounded by the card) */}
+            <canvas ref={canvasRef} className="absolute inset-0 w-full h-full pointer-events-none z-0" />
 
-            {/* Overlay to darken behind the card UI */}
-            <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-500 z-0 pointer-events-none" />
+            {/* Inner Layout Container */}
+            <div className="absolute inset-0 flex flex-col z-10 w-full h-full justify-between pointer-events-none">
 
-            <div className="absolute inset-0 flex flex-col p-4 z-10 w-full h-full justify-between pointer-events-none">
-                <div className="w-full h-full relative card-border overflow-hidden rounded-2xl flex flex-col group-hover:-translate-y-2 transition-transform duration-500 pointer-events-auto shadow-2xl bg-black/50 backdrop-blur-sm">
-                    {/* Top Image Section */}
-                    <div className="p-4 flex justify-center relative flex-1 min-h-0">
-                        <div className="w-full h-full rounded-xl gradient-border inner-glow overflow-hidden relative group-hover:shadow-[0_0_30px_rgba(212,255,0,0.15)] transition-shadow duration-500">
-                            {/* Animated grid background */}
-                            <div className="absolute inset-0 opacity-10">
-                                <div className="w-full h-full animate-pulse" style={{ backgroundImage: 'linear-gradient(90deg, rgba(255,255,255,0.3) 1px, transparent 1px), linear-gradient(rgba(255,255,255,0.3) 1px, transparent 1px)', backgroundSize: '15px 15px' }} />
-                            </div>
+                {/* Top Image Section */}
+                <div className="p-4 flex justify-center relative flex-1 min-h-0">
+                    <div className="w-full h-full rounded-xl gradient-border inner-glow overflow-hidden relative pointer-events-auto">
+                        {/* Animated grid background */}
+                        <div className="absolute inset-0 opacity-10">
+                            <div className="w-full h-full animate-pulse z-0" style={{ backgroundImage: 'linear-gradient(90deg, rgba(255,255,255,0.3) 1px, transparent 1px), linear-gradient(rgba(255,255,255,0.3) 1px, transparent 1px)', backgroundSize: '15px 15px' }} />
+                        </div>
 
-                            <div className="absolute inset-0 flex items-center justify-center p-6">
+                        {/* Image */}
+                        {product.image && (
+                            <div className="absolute inset-0 flex items-center justify-center p-6 z-10 transition-transform duration-500 group-hover:scale-110">
                                 <Image
                                     src={product.image}
                                     alt={product.name}
                                     fill
-                                    className="object-contain p-6 mix-blend-screen drop-shadow-[0_0_15px_rgba(212,255,0,0.5)] group-hover:scale-110 transition-transform duration-700 ease-out"
+                                    className="object-contain p-6 drop-shadow-[0_0_15px_rgba(79,70,229,0.5)]"
                                     sizes="(max-width: 768px) 100vw, 300px"
                                 />
                             </div>
-                        </div>
-                    </div>
-
-                    <div className="w-full h-px bg-gradient-to-r from-transparent via-white/30 to-transparent" />
-
-                    {/* Bottom Details Section */}
-                    <div className="p-5 flex-shrink-0 relative overflow-hidden">
-                        {/* Glow on hover behind text */}
-                        <div className="absolute inset-0 bg-gradient-to-t from-[var(--accent)]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-
-                        <span className="inline-block px-3 py-1 glass text-accent rounded-full text-xs font-medium mb-3 border border-white/10 shadow-[0_0_10px_rgba(212,255,0,0.1)]">
-                            {product.category}
-                        </span>
-                        <h3 className="text-xl font-bold text-white mb-2 font-syne tracking-tight group-hover:text-accent transition-colors duration-300">
-                            {product.name}
-                        </h3>
-
-                        <div className="flex justify-between items-center mt-4 pt-4 border-t border-white/10">
-                            <span className="text-white font-bold tracking-wider text-lg">{product.price}</span>
-                            <span className="text-white/70 text-sm glass px-4 py-2 rounded-full border border-white/10 flex items-center gap-2 group-hover:border-accent/40 group-hover:text-white transition-all duration-300 group-hover:bg-white/5">
-                                View
-                                <svg className="w-4 h-4 transition-transform group-hover:translate-x-1 duration-300" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" /></svg>
-                            </span>
-                        </div>
+                        )}
                     </div>
                 </div>
+
+                {/* Divider Line */}
+                <div className="w-full h-px bg-gradient-to-r from-transparent via-white/30 to-transparent flex-shrink-0" />
+
+                {/* Bottom Details Section */}
+                <div className="p-4 flex-shrink-0 pointer-events-auto">
+                    <span className="inline-block px-3 py-1 glass text-indigo-300 rounded-full text-xs font-medium mb-3 border border-indigo-400/30">
+                        {product.category}
+                    </span>
+                    <h3 className="text-lg font-medium text-white mb-2">{product.name}</h3>
+                    <p className="text-white/70 mb-4 leading-relaxed text-xs line-clamp-2">
+                        {product.description}
+                    </p>
+                    <div className="flex justify-between items-center">
+                        <span className="text-indigo-400 hover:text-indigo-300 transition flex items-center text-xs font-medium glass px-3 py-1.5 rounded-lg border border-indigo-400/30 hover:bg-white/5 cursor-pointer">
+                            View
+                            <svg className="w-3 h-3 ml-1" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" /></svg>
+                        </span>
+                        <span className="text-white/50 text-xs glass px-2 py-1 rounded-full border border-white/10">
+                            {product.price}
+                        </span>
+                    </div>
+                </div>
+
             </div>
         </div>
     );
