@@ -8,12 +8,6 @@ export default function Home() {
       <div className="h-screen w-full">
         <HeroText />
       </div>
-
-      <footer className={styles.footer}>
-        <p className={styles.footerText}>
-          © 2025 NEO-NOIR COMMERCE. DESIGNED BY ANTIGRAVITY.
-        </p>
-      </footer>
     </main>
   );
 }
