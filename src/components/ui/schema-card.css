@@ -14,7 +14,7 @@
 .sc-gradient-border-wrapper {
     background: conic-gradient(from var(--angle), #4a52e8 0%, #4564ed 15%, #3d7df5 30%, #6a5acd 45%, #9d69bf 60%, #bd67a8 70%, #bb7d93 85%, #d1885e 94%, #e39434 100%);
     filter: drop-shadow(0 0 10px rgba(74, 82, 232, 0.4)) drop-shadow(0 0 20px rgba(157, 105, 191, 0.2));
-    animation: sc-spin 4s linear infinite;
+    animation: sc-spin 5s linear infinite;
 }
 
 @keyframes sc-spin {
