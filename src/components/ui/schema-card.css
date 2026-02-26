@@ -5,9 +5,8 @@
     box-shadow: 0 8px 32px 0 rgba(99, 102, 241, 0.2);
 }
 
-.sc-gradient-border {
-    background: linear-gradient(135deg, rgba(99, 102, 241, 0.05), rgba(139, 92, 246, 0.05));
-    border: 2px solid rgba(99, 102, 241, 0.3);
+.sc-gradient-border-wrapper {
+    background: linear-gradient(135deg, #4a52e8 0%, #4564ed 20%, #3d7df5 40%, #4977f5 60%, #9d69bf 75%, #bb7d93 85%, #d1885e 92%, #e39434 100%);
 }
 
 .sc-inner-glow {
