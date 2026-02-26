@@ -1,7 +1,7 @@
 .sc-card-border {
     background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(139, 92, 246, 0.1));
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 2px solid #1f1952;
     box-shadow: 0 8px 32px 0 rgba(99, 102, 241, 0.2);
 }
 
@@ -20,9 +20,12 @@
 }
 
 @keyframes sc-float {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: translateY(0px);
     }
+
     50% {
         transform: translateY(-10px);
     }
@@ -33,9 +36,12 @@
 }
 
 @keyframes sc-pulse {
-    0%, 100% {
+
+    0%,
+    100% {
         opacity: 0.1;
     }
+
     50% {
         opacity: 0.15;
     }
