@@ -1,7 +1,7 @@
 .sc-card-border {
     background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(139, 92, 246, 0.1));
     backdrop-filter: blur(10px);
-    border: 2px solid #1f1952;
+    border: 2px solid #384abb;
     box-shadow: 0 8px 32px 0 rgba(99, 102, 241, 0.2);
 }
 
