@@ -54,7 +54,7 @@ export function SchemaCard({
                     <p className="text-white/70 mb-4 leading-relaxed text-xs">
                         {description}
                     </p>
-                    <div className="flex justify-between items-center">
+                    <div className="flex justify-end items-center">
                         <a href="#" className="text-indigo-400 hover:text-indigo-300 transition flex items-center text-xs font-medium sc-glass px-3 py-1.5 rounded-lg border border-indigo-400/30">
                             Manage
                             <svg className="w-3 h-3 ml-1" viewBox="0 0 24 24" fill="none">
