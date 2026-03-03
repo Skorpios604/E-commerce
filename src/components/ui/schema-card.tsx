@@ -82,28 +82,26 @@ export function SchemaCard({
                             </button>
                         </div>
                         <div className="p-6">
-                            <div className="flex items-center gap-4 mb-6">
-                                <div className="w-16 h-16 rounded-lg bg-indigo-500/10 flex items-center justify-center border border-indigo-400/20">
+                            <div className="flex flex-col items-center mb-6 text-center mt-2">
+                                <div className="w-40 h-40 shrink-0 rounded-xl bg-indigo-500/10 flex items-center justify-center border border-indigo-400/20 mb-4">
                                     {imageSrc ? (
                                         <Image
                                             src={imageSrc}
                                             alt={title}
-                                            className="w-full h-full object-cover rounded-lg opacity-80"
+                                            className="w-full h-full object-cover rounded-xl opacity-80"
                                         />
                                     ) : (
-                                        <svg className="w-8 h-8 text-indigo-400" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <svg className="w-20 h-20 text-indigo-400" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                                             <ellipse cx="12" cy="5" rx="9" ry="3" strokeWidth="2" />
                                             <path d="M3 5V19C3 20.66 7.03 22 12 22C16.97 22 21 20.66 21 19V5" strokeWidth="2" />
                                             <path d="M3 12C3 13.66 7.03 15 12 15C16.97 15 21 13.66 21 12" strokeWidth="2" />
                                         </svg>
                                     )}
                                 </div>
-                                <div>
-                                    <h3 className="text-lg font-medium text-white">{title}</h3>
-                                    <p className="text-sm text-indigo-300">{label}</p>
-                                </div>
+                                <h3 className="text-xl font-medium text-white mb-2">{title}</h3>
+                                <p className="text-sm text-indigo-300 px-3 py-1 bg-indigo-500/10 rounded-full border border-indigo-400/20">{label}</p>
                             </div>
-                            <p className="text-white/70 text-sm mb-6 pb-6 border-b border-white/10">
+                            <p className="text-white/70 text-sm mb-6 pb-6 border-b border-white/10 text-center">
                                 {description}
                             </p>
                             <div className="flex justify-between items-center mb-6">
