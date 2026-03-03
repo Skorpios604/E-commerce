@@ -27,8 +27,12 @@ export function SchemaCard({
                         <div className="w-full h-48 sc-gradient-border-wrapper rounded-xl p-[2px]">
                             <div className="w-full h-full rounded-[10px] sc-inner-glow overflow-hidden relative bg-[#0a0a0f]">
                                 {/* Animated grid background */}
-                                <div className="absolute inset-0 opacity-10">
-                                    <div className="w-full h-full sc-animate-pulse" style={{ backgroundImage: 'linear-gradient(90deg, rgba(255,255,255,0.3) 1px, transparent 1px), linear-gradient(rgba(255,255,255,0.3) 1px, transparent 1px)', backgroundSize: '15px 15px' }} />
+                                <div className="absolute inset-0 opacity-100">
+                                    <div className="w-full h-full sc-animate-pulse" style={{
+                                        backgroundImage: 'linear-gradient(90deg, rgba(234, 129, 248, 0.8) 2px, transparent 1px), linear-gradient(rgba(248, 129, 228, 0.8) 2px, transparent 2px)',
+                                        backgroundSize: '15px 15px',
+                                        filter: 'drop-shadow(0 0 6px rgba(221, 47, 221, 1))'
+                                    }} />
                                 </div>
 
                                 {/* Product Image or Database icon visualization */}
@@ -83,15 +87,24 @@ export function SchemaCard({
                         </div>
                         <div className="p-6">
                             <div className="flex flex-col items-center mb-6 text-center mt-2">
-                                <div className="w-40 h-40 shrink-0 rounded-xl bg-indigo-500/10 flex items-center justify-center border border-indigo-400/20 mb-4">
+                                <div className="w-40 h-40 shrink-0 rounded-xl bg-indigo-500/10 flex items-center justify-center border border-indigo-400/20 mb-4 relative overflow-hidden bg-[#0a0a0f]">
+                                    {/* Animated grid background */}
+                                    <div className="absolute inset-0 opacity-100 pointer-events-none">
+                                        <div className="w-full h-full sc-animate-pulse" style={{
+                                            backgroundImage: 'linear-gradient(90deg, rgba(234, 129, 248, 0.8) 2px, transparent 2px), linear-gradient(rgba(248, 129, 228, 0.8) 2px, transparent 2px)',
+                                            backgroundSize: '15px 15px',
+                                            filter: 'drop-shadow(0 0 6px rgba(221, 47, 221, 1))'
+                                        }} />
+                                    </div>
+
                                     {imageSrc ? (
                                         <Image
                                             src={imageSrc}
                                             alt={title}
-                                            className="w-full h-full object-cover rounded-xl opacity-80"
+                                            className="w-full h-full object-cover rounded-xl relative z-10"
                                         />
                                     ) : (
-                                        <svg className="w-20 h-20 text-indigo-400" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <svg className="w-20 h-20 text-indigo-400 relative z-10" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                                             <ellipse cx="12" cy="5" rx="9" ry="3" strokeWidth="2" />
                                             <path d="M3 5V19C3 20.66 7.03 22 12 22C16.97 22 21 20.66 21 19V5" strokeWidth="2" />
                                             <path d="M3 12C3 13.66 7.03 15 12 15C16.97 15 21 13.66 21 12" strokeWidth="2" />
