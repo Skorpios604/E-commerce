@@ -41,7 +41,7 @@ export function SchemaCard({
                                         <Image
                                             src={imageSrc}
                                             alt={title}
-                                            className="w-full h-full object-cover opacity-80 mix-blend-screen"
+                                            className="w-full h-full object-cover opacity-100 mix-blend-screen"
                                         />
                                     ) : (
                                         <svg className="w-24 h-24 text-indigo-400 opacity-20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
