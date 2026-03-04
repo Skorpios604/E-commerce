@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Syne, Manrope } from "next/font/google";
+import { CartProvider } from "@/context/CartContext";
+import { LoadoutDrawer, FloatingCartButton } from "@/components/ui/loadout-drawer";
 import "./globals.css";
 
 const syne = Syne({
@@ -27,7 +29,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${syne.variable} ${manrope.variable} antialiased`}>
-        {children}
+        <CartProvider>
+          {children}
+          <LoadoutDrawer />
+          <FloatingCartButton />
+        </CartProvider>
       </body>
     </html>
   );
