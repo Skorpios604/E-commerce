@@ -9,7 +9,7 @@ interface HeroTextProps {
 }
 
 export default function HeroText({
-    text = "BLACKGRID\nEXCHANGE",
+    text = "sLACKGRID\nEXCHANGE",
     className = "",
 }: HeroTextProps) {
     const [count, setCount] = useState(0);
