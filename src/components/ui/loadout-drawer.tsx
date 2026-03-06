@@ -25,7 +25,7 @@ export function LoadoutDrawer() {
 
                     <h2 className="text-xl font-medium text-white tracking-widest uppercase relative z-10 flex items-center gap-3">
                         <span className="w-2 h-2 bg-indigo-500 animate-pulse rounded-full shadow-[0_0_10px_rgba(99,102,241,1)]" />
-                        Active Loadout
+                        Active Cart
                     </h2>
                     <button onClick={closeDrawer} className="text-white/50 hover:text-white transition relative z-10 p-2 hover:bg-white/5 rounded-lg">
                         <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -45,8 +45,8 @@ export function LoadoutDrawer() {
                                 <line x1="6" y1="21" x2="18" y2="21" strokeWidth="1" />
                                 <line x1="12" y1="17" x2="12" y2="21" strokeWidth="1" />
                             </svg>
-                            <p className="tracking-widest uppercase text-xs">Loadout Empty</p>
-                            <p className="text-xs text-center px-8 text-white/30">Establish a neural link with items to begin compiling your loadout.</p>
+                            <p className="tracking-widest uppercase text-xs">Cart Empty</p>
+                            <p className="text-xs text-center px-8 text-white/30">Add items to your cart to begin the checkout process.</p>
                         </div>
                     ) : (
                         items.map((item) => (
@@ -106,7 +106,7 @@ export function LoadoutDrawer() {
 
                 <div className="p-6 border-t border-white/10 bg-[#0a0a0f] relative z-10">
                     <div className="flex justify-between items-center mb-6">
-                        <span className="text-white/50 uppercase tracking-widest text-xs">Total Credits //</span>
+                        <span className="text-white/50 uppercase tracking-widest text-xs">Total Amount //</span>
                         <span className="text-white font-bold text-2xl tracking-tight">
                             ${cartTotal.toFixed(2)}
                         </span>
@@ -115,7 +115,7 @@ export function LoadoutDrawer() {
                         className="w-full py-4 bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl font-semibold tracking-widest uppercase text-sm transition duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-[0_0_20px_rgba(79,70,229,0.3)] hover:shadow-[0_0_40px_rgba(79,70,229,0.5)] flex justify-center items-center gap-2"
                         disabled={items.length === 0}
                     >
-                        Initiate Checkout
+                        Proceed to Checkout
                         <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                         </svg>

@@ -26,7 +26,7 @@ export default function ProductClient({ product }: { product: Product }) {
                         <svg className="w-4 h-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
                         </svg>
-                        [ Return to Database ]
+                        [ Return to Store ]
                     </Link>
                 </div>
 
@@ -98,7 +98,7 @@ export default function ProductClient({ product }: { product: Product }) {
                                 {product.title}
                             </h1>
                             <div className="text-3xl font-mono text-fuchsia-400 mb-6 drop-shadow-[0_0_8px_rgba(234,129,248,0.5)]">
-                                Ƀ {product.price.toFixed(2)}
+                                $ {product.price.toFixed(2)}
                             </div>
                             <p className="text-zinc-300 font-light leading-relaxed mb-8">
                                 {product.longDescription}
@@ -112,7 +112,7 @@ export default function ProductClient({ product }: { product: Product }) {
                                 <svg className="w-5 h-5 text-indigo-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
                                 </svg>
-                                DECRYPT & ACQUIRE
+                                PURCHASE
                             </button>
                         </div>
 
@@ -122,7 +122,7 @@ export default function ProductClient({ product }: { product: Product }) {
                                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
                                 </svg>
-                                // HARDWARE_SPECS
+                                // SPECIFICATIONS
                             </h3>
                             <div className="border border-indigo-900/50 rounded-lg overflow-hidden bg-black/40 backdrop-blur-md">
                                 {product.specs.map((spec, index) => (
@@ -139,9 +139,9 @@ export default function ProductClient({ product }: { product: Product }) {
                 {/* Reviews Section */}
                 <div className="mt-20 border-t border-indigo-900/40 pt-16">
                     <h3 className="text-2xl font-bold text-white mb-2 flex items-center gap-3" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-                        <span className="text-fuchsia-500">&gt;_</span> COMM-LINK FEED
+                        <span className="text-fuchsia-500">&gt;_</span> CUSTOMER REVIEWS
                     </h3>
-                    <p className="text-zinc-500 font-mono text-sm mb-8">VERIFIED NETRUNNER IMPRESSIONS</p>
+                    <p className="text-zinc-500 font-mono text-sm mb-8">VERIFIED BUYER IMPRESSIONS</p>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         {product.reviews.map((review) => (
