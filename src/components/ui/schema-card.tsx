@@ -65,7 +65,7 @@ export function SchemaCard({
                     <div className="w-full h-px bg-gradient-to-r from-transparent via-white/30 to-transparent" />
                     <div className="p-4">
                         <span className="inline-block px-3 py-1 sc-glass text-indigo-300 rounded-full text-xs font-medium mb-3 border border-indigo-400/30">{label}</span>
-                        <h3 className="text-lg font-medium text-white mb-2">{title}</h3>
+                        <h3 className="text-lg font-medium text-white mb-2 lining-nums">{title}</h3>
                         <p className="text-white/70 mb-4 leading-relaxed text-xs">
                             {description}
                         </p>

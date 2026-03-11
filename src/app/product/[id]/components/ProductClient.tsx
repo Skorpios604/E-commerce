@@ -94,7 +94,7 @@ export default function ProductClient({ product }: { product: Product }) {
                                     ID: {product.id}
                                 </span>
                             </div>
-                            <h1 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white via-indigo-200 to-fuchsia-300 mb-4 drop-shadow-[0_0_10px_rgba(255,255,255,0.2)]" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                            <h1 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white via-indigo-200 to-fuchsia-300 mb-4 drop-shadow-[0_0_10px_rgba(255,255,255,0.2)] lining-nums" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                                 {product.title}
                             </h1>
                             <div className="text-3xl font-mono text-fuchsia-400 mb-6 drop-shadow-[0_0_8px_rgba(234,129,248,0.5)]">
